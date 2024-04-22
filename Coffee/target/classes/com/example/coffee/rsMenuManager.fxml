@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffee.MenuManager">
+    <children>
+        <MenuBar fx:id="mnb" layoutX="14.0" layoutY="14.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Admin">
+                    <items>
+                        <MenuItem fx:id="mniAdmin" mnemonicParsing="false" onAction="#clickOnMenuAdmin" text="Menu" />
+                    </items></Menu>
+                <Menu mnemonicParsing="false" text="Information">
+                    <items>
+                        <MenuItem fx:id="mniPersonalInformation" mnemonicParsing="false" onAction="#clickOnMenuPersonalInformation" text="Personal Information" />
+                        <MenuItem fx:id="mniLogout" mnemonicParsing="false" onAction="#clickOnMenuLogout" text="Logout" />
+                    </items>
+                </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem fx:id="mniAddFood" mnemonicParsing="false" onAction="#clickHotkeyAddFood" text="Add food">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="SPACE" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="mniCheckOut" mnemonicParsing="false" onAction="#clickHotkeyCheckout" text="Check out">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="ENTER" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                  </MenuItem>
+              </items>
+            </Menu>
+            </menus>
+        </MenuBar>
+        <Pane layoutX="14.0" layoutY="41.0" prefHeight="431.0" prefWidth="348.0">
+         <children>
+            <ScrollPane prefHeight="431.0" prefWidth="348.0">
+               <content>
+                  <FlowPane fx:id="flpManager" prefHeight="431.0" prefWidth="339.0" />
+               </content>
+            </ScrollPane>
+         </children>
+        </Pane>
+        <Pane layoutX="369.0" layoutY="103.0" prefHeight="300.0" prefWidth="317.0">
+         <children>
+            <TableView fx:id="tbvMenumanager" prefHeight="300.0" prefWidth="365.0">
+              <columns>
+                <TableColumn fx:id="tbcFoodNameMenuManager" prefWidth="158.0" text="Food Name" />
+                <TableColumn fx:id="tbcCountMenuManager" prefWidth="42.0" style="-fx-alignment: CENTER;" text="Count" />
+                  <TableColumn fx:id="tbcPriceMenuManager" prefWidth="92.0" style="-fx-alignment: CENTER;" text="Price" />
+                  <TableColumn fx:id="tbcTotalPriceMenuManager" prefWidth="72.0" style="-fx-alignment: CENTER;" text="Total Price" />
+              </columns>
+            </TableView>
+         </children>
+        </Pane>
+        <Pane layoutX="369.0" layoutY="410.0" prefHeight="61.0" prefWidth="317.0">
+            <children>
+                <Button fx:id="bttDiscount" layoutX="92.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="78.0" text="Discount" />
+                <Spinner fx:id="sDiscount" amountToStepBy="5" initialValue="0" layoutX="92.0" layoutY="35.0" max="100" min="-100" prefHeight="25.0" prefWidth="78.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Spinner>
+                <ComboBox fx:id="cbbTableFood" layoutY="35.0" onAction="#selectcbbTableFood" prefHeight="25.0" prefWidth="85.0" />
+                <Button fx:id="bttSwitchTable" mnemonicParsing="false" onAction="#SwitchTableFood" prefHeight="32.0" prefWidth="85.0" text="Switch Table" />
+            <TextField fx:id="tfTotalPrice" layoutX="172.0" layoutY="18.0" prefHeight="25.0" prefWidth="116.0" style="-fx-text-fill: #8b003a;">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            </children>
+        </Pane>
+        <Pane layoutX="369.0" layoutY="39.0" prefHeight="61.0" prefWidth="317.0">
+            <children>
+                <ComboBox fx:id="cbboxFoodCategories" layoutY="2.0" onAction="#selectcbbCategories" prefHeight="25.0" prefWidth="222.0" promptText="Category Food" />
+                <ComboBox fx:id="cbboxFoods" layoutY="35.0" prefHeight="25.0" prefWidth="222.0" promptText="Foods" />
+                <Button fx:id="bttAdd" layoutX="225.0" mnemonicParsing="false" onAction="#clickOnAddFood" prefHeight="61.0" prefWidth="78.0" text="Add" />
+            </children>
+        </Pane>
+          <Button fx:id="bttCheckout" layoutX="660.0" layoutY="410.0" mnemonicParsing="false" onAction="#clickOnCheckout" prefHeight="61.0" prefWidth="68.0" text="Checkout" />
+          <Spinner fx:id="sCount" initialValue="0" layoutX="674.0" layoutY="58.0" max="100" min="-100" prefHeight="25.0" prefWidth="53.0">
+              <opaqueInsets>
+                  <Insets />
+              </opaqueInsets>
+          </Spinner>
+    </children>
+</Pane>
